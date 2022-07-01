@@ -1,4 +1,4 @@
-package io.github.kubrickLiu.safe;
+package com.github.KubrickLiu.safe;
 
 import java.util.function.Consumer;
 
