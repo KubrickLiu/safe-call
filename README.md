@@ -13,7 +13,7 @@ Maven:
 
 ```xml
 <dependency>
-    <groupId>io.github.kubrickLiu</groupId>
+    <groupId>io.github.kubrickliu</groupId>
     <artifactId>safe-call</artifactId>
     <version>1.0.1</version>
 </dependency>
