@@ -1,4 +1,4 @@
-package io.github.KubrickLiu.safe;
+package io.github.kubrickliu.safe;
 
 import org.junit.Assert;
 import org.junit.Test;
