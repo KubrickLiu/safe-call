@@ -1,4 +1,4 @@
-package com.github.KubrickLiu.safe;
+package io.github.KubrickLiu.safe;
 
 import java.util.function.Consumer;
 
@@ -7,13 +7,15 @@ public interface SafeCall<T> {
     T call() throws Throwable;
 
     static <T> T wrap(SafeCall<T> safeCall) {
-        return wrap(safeCall, null);
+        return wrap(safeCall, null,  NonConsumer.INSTANCE);
     }
 
     static <T> T wrap(SafeCall<T> safeCall, T defaultValue) {
-        return wrap(safeCall, defaultValue, throwable -> {
-            // ignore
-        });
+        return wrap(safeCall, defaultValue, NonConsumer.INSTANCE);
+    }
+
+    static <T> T wrap(SafeCall<T> safeCall, Consumer<Throwable> consumer) {
+        return wrap(safeCall, null, consumer);
     }
 
     static <T> T wrap(SafeCall<T> safeCall, T defaultValue, Consumer<Throwable> consumer) {

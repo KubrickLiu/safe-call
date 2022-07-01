@@ -1,4 +1,4 @@
-package com.github.KubrickLiu.safe;
+package io.github.KubrickLiu.safe;
 
 import java.util.function.Consumer;
 
@@ -7,9 +7,7 @@ public interface SafeExec {
     void wrap() throws Throwable;
 
     static void wrap(SafeExec safeExec) {
-        wrap(safeExec, throwable -> {
-            // ignore
-        });
+        wrap(safeExec, NonConsumer.INSTANCE);
     }
 
     static void wrap(SafeExec safeExec, Consumer<Throwable> consumer) {
